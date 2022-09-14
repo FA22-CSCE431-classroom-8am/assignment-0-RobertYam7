@@ -1,0 +1,12 @@
+docker pull dmartinez05/ruby_rails_postgresql:latest
+
+docker run --rm -it --volume "${PWD}:/csce431" -e DATABASE_USER=test_app -e DATABASE_PASSWORD=test_password -p 3000:3000 dmartinez05/ruby_rails_postgresql:latest
+
+cd csce431/csce431/test_app
+
+bundle install
+rails db:create
+rails db:migrate
+rails server --binding=0.0.0.0
+
+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
